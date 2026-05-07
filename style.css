@@ -84,7 +84,7 @@ div.into-text {
 
   background:
     linear-gradient(to right, black, transparent),
-    url("./header\ img/header photo.jpg");
+    url("header photo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
