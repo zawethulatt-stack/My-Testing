@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Shop Myanmar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <style>
+      body {
+        background: #eef1f6;
+      }
+      #order-payment {
+        padding: 140px 20px 60px;
+        background: transparent;
+      }
+      .order-container {
+        background: #ffffff;
+        max-width: 700px;
+        width: min(100%, 700px);
+        padding: 46px 38px;
+        border-radius: 32px;
+        border: 1px solid rgba(255, 140, 0, 0.18);
+        box-shadow: 0 30px 85px rgba(20, 30, 50, 0.12);
+        margin: 0 auto;
+      }
+      .order-header {
+        text-align: center;
+      }
+      .order-header .subtitle {
+        max-width: 520px;
+        margin: 0 auto 32px;
+      }
+      #product-info {
+        background: #f9f9f9;
+        border: 1px solid rgba(255, 140, 0, 0.16);
+        border-radius: 18px;
+        padding: 22px 20px;
+        margin-bottom: 28px;
+      }
+      #product-info h3 {
+        margin: 0 0 12px;
+        font-size: 1rem;
+        color: #111827;
+      }
+      #product-info p {
+        margin: 8px 0;
+        font-size: 0.95rem;
+        color: #4b5563;
+      }
+      .order-form {
+        display: grid;
+        gap: 18px;
+      }
+      .form-group label {
+        font-weight: 600;
+        color: #1f2937;
+      }
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 14px;
+        background: #ffffff;
+        color: #111827;
+        font-size: 0.96rem;
+        box-sizing: border-box;
+      }
+      .form-group textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        border-color: #ff8c00;
+        box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.14);
+        outline: none;
+      }
+      .submit-btn1 {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+        padding: 16px 24px;
+        margin-top: 6px;
+        background: #111111;
+        color: #ffffff;
+        border-radius: 999px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .submit-btn1:hover {
+        background: #333333;
+        transform: translateY(-1px);
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        padding: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease;
+      }
+      .overlay.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      .noti-box {
+        background: #ffffff;
+        border-radius: 24px;
+        max-width: 420px;
+        width: 100%;
+        padding: 30px 28px;
+        text-align: center;
+        box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
+        transform: translateY(-16px);
+        transition: transform 0.25s ease;
+      }
+      .overlay.visible .noti-box {
+        transform: translateY(0);
+      }
+      .noti-box h3 {
+        margin: 0 0 14px;
+        font-size: 1.6rem;
+        color: #111827;
+      }
+      .noti-box p {
+        margin: 0 0 26px;
+        color: #475569;
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+      .close-btn {
+        background: #111111;
+        color: #ffffff;
+        border: none;
+        border-radius: 999px;
+        padding: 14px 30px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .close-btn:hover {
+        background: #333333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="./shop.html">
+          <img src="./logo icon/shop.png" alt="" class="logo"
+        /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa-sharp fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href=" ./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </header>
+    <main id="order-payment">
+      <div class="order-container">
+        <div class="order-header">
+          <h2>အော်ဒါတင်ရန် အချက်အလက်များ</h2>
+          <p class="subtitle">
+            ကျေးဇူးပြု၍ အောက်ပါအချက်အလက်များကို မှန်ကန်စွာဖြည့်စွက်ပေးပါ။
+          </p>
+        </div>
+
+        <div id="product-info"></div>
+
+        <form id="order-form" class="order-form" novalidate>
+          <div class="form-group">
+            <label for="name">ဝယ်ယူသူအမည်</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">ဖုန်းနံပါတ်</label>
+            <input type="tel" id="phone" placeholder="09xxxxxxxx" required />
+          </div>
+
+          <div class="form-group">
+            <label for="address">ပိုဆောင်ပေးရမည့် လိပ်စာ</label>
+            <textarea
+              id="address"
+              rows="3"
+              placeholder="Delivery address"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="payment">ငွေပေးချေမှုစနစ် ရွေးချယ်ပါ</label>
+            <select id="payment" required>
+              <option value="" disabled selected>
+                -- Payment ရွေးချယ်ပါ --
+              </option>
+              <option value="kpay">KBZ Pay</option>
+              <option value="wave">Wave Money</option>
+              <option value="cod">Cash on Delivery</option>
+              <option value="banking">Mobile Banking (AYA, CB)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="note">အခြားမှတ်ချက် (ရှိလျှင်)</label>
+            <input type="text" id="note" placeholder="Order note" required />
+          </div>
+
+          <a href="./success.html"
+            ><button type="button" id="submit-order" class="submit-btn1">
+              အော်ဒါတင်မည်
+            </button></a
+          >
+        </form>
+
+        <div id="order-modal" class="overlay hidden">
+          <div class="noti-box">
+            <h3>အော်ဒါတင်ပြီးပါပြီ!</h3>
+            <p>သင့်အော်ဒါကို အောင်မြင်စွာ လက်ခံပြီးပါပြီ။ ကျေးဇူးတင်ပါသည်။</p>
+            <button type="button" id="close-modal" class="close-btn">
+              ပိတ်ရန်
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pro-footer">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-box brand-box">
+            <h2 class="footer-logo">E-Shop <span>Myanmar</span></h2>
+            <p>
+              ကျွန်ုပ်တို့သည် အရည်အသွေးမြင့် အီလက်ထရောနစ် ပစ္စည်းများကို
+              မြန်မာနိုင်ငံတစ်ဝှမ်းသို့ အမြန်ဆုံးနှင့် ယုံကြည်စိတ်ချစွာ
+              ပို့ဆောင်ပေးနေပါသည်။
+            </p>
+
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-viber"></i></a>
+              <a href="#"><i class="fa-brands fa-telegram"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-box">
+            <h4>Shopping</h4>
+            <ul>
+              <li><a href="#">Computer & Tablets</a></li>
+              <li><a href="#">Mobile & Accessories</a></li>
+              <li><a href="#">TV & Desktop</a></li>
+              <li><a href="#">Audio & Headphones</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-box newsletter">
+            <h4>Stay Updated</h4>
+            <p>
+              နောက်ဆုံးထွက် Promotion များ သိရှိနိုင်ရန် Subscribe လုပ်ထားပါ။
+            </p>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Your Email Address" />
+              <button type="submit" class="order-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container-bottom">
+          <p>&copy; 2026 E-Shop Myanmar. Developed by Zawe Thu latt.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get("product");
+        const price = urlParams.get("price");
+        const type = urlParams.get("type");
+        if (product) {
+          const infoDiv = document.getElementById("product-info");
+          infoDiv.innerHTML = `
+                    <h3>သင်အော်ဒါတင်မည့် ပစ္စည်း: ${product}</h3>
+                    <p>စျေးနှုန်း: ${price}</p>
+                    <p>အမျိုးအစား: ${type}</p>
+                `;
+          document.getElementById("note").value = product;
+        }
+
+        const submitOrder = document.getElementById("submit-order");
+        const orderModal = document.getElementById("order-modal");
+        const closeModal = document.getElementById("close-modal");
+
+        submitOrder.addEventListener("click", function () {
+          const name = document.getElementById("name").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const address = document.getElementById("address").value.trim();
+          const payment = document.getElementById("payment").value;
+          const note = document.getElementById("note").value.trim();
+
+          if (!name || !phone || !address || !payment || !note) {
+            alert("ကျေးဇူးပြုပြီး လိုအပ်သော အချက်အလက်များကို ဖြည့်ပါ။");
+            return;
+          }
+
+          localStorage.setItem("orderName", name);
+          orderModal.classList.remove("hidden");
+        });
+
+        closeModal.addEventListener("click", function () {
+          orderModal.classList.add("hidden");
+          window.location.href = "./success.html";
+        });
+
+        orderModal.addEventListener("click", function (event) {
+          if (event.target === orderModal) {
+            orderModal.classList.add("hidden");
+            window.location.href = "./success.html";
+          }
+        });
+      });
+    </script>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>

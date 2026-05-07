@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Shop Myanmar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="./shop.html">
+          <img src="./logo icon/shop.png" alt="" class="logo"
+        /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa-sharp fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href=" ./index.html">Home</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </header>
+
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="faq-card" open>
+        <summary>
+          ငွေပေးချေမှုစနစ်များ
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          KPay, Wave Money နှင့် Mobile Banking များဖြင့် ပေးချေနိုင်ပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းပိုဆောင်ချိန်
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ရန်ကုန်အတွင်း ၁ ရက်မှ ၂ ရက်၊ နယ်ဝေးများသို ၃ ရက်မှ ၅ ရက်အတွင်း
+          ပိုဆောင်ပေးပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          Order ကို track လုပ်လိုရမလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ရပါသည်။ သင့် Order ပိုဆောင်လိုက်သည်နှင့် Tracking Number ကို SMS
+          ပိုပေးပါမည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းကို ဘယ်လိုမှာယူရမလဲ? <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          Website ပေါ်ရှိ 'Add to Cart' ကိုနှိပ်ပြီး Checkout page တွင်
+          မှာယူနိုင်သလို Facebook Messenger မှလည်း မှာယူနိုင်ပါတယ်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းအရည်အသွေး စစ်ဆေးပြီးမှ လက်ခံရရှိနိုင်ပါသလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ရန်ကုန်မြိုတွင်း ပစ္စည်းရောက်မှ ငွေချေစနစ်ဖြင့် မှာယူသူများအနေဖြင့်
+          ပစ္စည်းကို စစ်ဆေးပြီးမှ ငွေချေနိုင်ပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းအာမခံ (Warranty) ဘယ်လောက်ပေးပါသလဲ? <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ပစ္စည်းအမျိုးအစားပေါ် မူတည်၍ ၆ လမှ ၁ နှစ်အထိ အာမခံ ပေးထားပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းချိုယွင်းချက်ရှိပါက လဲလှယ်ပေးပါသလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ဝယ်ယူပြီး ၇ ရက်အတွင်း စက်ပိုင်းဆိုင်ရာ ချိုယွင်းချက်ရှိပါက အသစ်တစ်လုံး
+          ချက်ချင်းလဲလှယ်ပေးပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          Installment (အရစ်ကျစနစ်) ရပါသလား? <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ဟုတ်ကဲ့၊ CB, KBZ, AYA စသည့် ဘဏ်ကတ်များဖြင့် အရစ်ကျ ဝယ်ယူနိုင်သော
+          စနစ်များကို စီစဉ်ပေးထားပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          KPay ဖြင့်ပေးချေပါက ရာခိုင်နှုန်း (%) ထပ်ပေးရပါသလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          မလိုပါ။ သတ်မှတ်ထားသည့် ပစ္စည်းတန်ဖိုးအတိုင်းသာ ပေးချေရပါမည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          Deli ခ (ပိုဆောင်ခ) ဘယ်လောက်ပေးရမလဲ? <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          မြိုနယ်နှင့် အကွာအဝေးပေါ် မူတည်၍ ၃,၀၀၀ ကျပ်မှ စတင်ပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းကို ကိုယ်တိုင်လာရောက် ဝယ်ယူလိုရပါသလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ရပါသည်။ ကျွန်ုပ်တို၏ Showroom လိပ်စာအတိုင်း ရုံးချိန်အတွင်း လာရောက်
+          ဝယ်ယူနိုင်ပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          Original ပစ္စည်းဖြစ်ကြောင်း ဘယ်လိုစစ်ဆေးရမလဲ?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ပစ္စည်းဘူးပေါ်ရှိ QR Code သိုမဟုတ် Serial Number ကို သက်ဆိုင်ရာ Brand
+          Website များတွင် စစ်ဆေးနိုင်ပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          Laptop ဝယ်ယူပါက Window နှင့် Software များ တင်ပေးပါသလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ဟုတ်ကဲ့၊ အခြေခံလိုအပ်သော Software များနှင့် Window ကို Free
+          တင်ပေးပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          Stock ပြတ်နေတဲ့ ပစ္စည်းတွေကို Pre-order မှာလိုရပါသလား?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ရရှိနိုင်ပါသည်။ ပစ္စည်းအမျိုးအစားပေါ် မူတည်၍ ၂ ပတ်မှ ၄ ပတ်အတွင်း
+          ရရှိအောင် စီစဉ်ပေးပါသည်။
+        </div>
+      </details>
+
+      <details class="faq-card">
+        <summary>
+          ပစ္စည်းအသုံးပြုပုံ နည်းလမ်းကို ဘယ်မှာမေးလိုရမလဲ?
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          ကျွန်ုပ်တို၏ Customer Service ဖုန်းနံပါတ် သိုမဟုတ် Messenger သို ၂၄
+          နာရီပတ်လုံး ဆက်သွယ်မေးမြန်းနိုင်ပါသည်။
+        </div>
+      </details>
+    </div>
+
+    <footer class="pro-footer">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-box brand-box">
+            <h2 class="footer-logo">E-Shop <span>Myanmar</span></h2>
+            <p>
+              ကျွန်ုပ်တို့သည် အရည်အသွေးမြင့် အီလက်ထရောနစ် ပစ္စည်းများကို
+              မြန်မာနိုင်ငံတစ်ဝှမ်းသို့ အမြန်ဆုံးနှင့် ယုံကြည်စိတ်ချစွာ
+              ပို့ဆောင်ပေးနေပါသည်။
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-viber"></i></a>
+              <a href="#"><i class="fa-brands fa-telegram"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-box">
+            <h4>Shopping</h4>
+            <ul>
+              <li><a href="./shop.html">Computer & Tablets</a></li>
+              <li><a href="./shop.html">Mobile & Accessories</a></li>
+              <li><a href="./shop.html">TV & Desktop</a></li>
+              <li><a href="./shop.html">Audio & Headphones</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-box newsletter">
+            <h4>Stay Updated</h4>
+            <p>
+              နောက်ဆုံးထွက် Promotion များ သိရှိနိုင်ရန် Subscribe လုပ်ထားပါ။
+            </p>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Your Email Address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container-bottom">
+          <p>&copy; 2026 E-Shop Myanmar. Developed by Zawe Thu Latt.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
